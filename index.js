@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Choices = require('inquirer/lib/objects/choices');
+const { stringify } = require('querystring');
 
 inquirer.prompt([
     {
@@ -48,6 +49,15 @@ inquirer.prompt([
         type: 'checkbox',
         name: 'license',
         message: 'which licence would you like to attach?',
-        choice: ['GNU', 'Apache', 'Ms-PL', 'CDDL', 'EPL', 'MIT']
+        choices: ['GNU', 'Apache', 'Ms-PL', 'CDDL', 'EPL', 'MIT']
     },
-])
+]).then((responses) => {
+    console.log(responses);
+    fileBody = `this should work ${responses}`;
+    
+    
+    fs.writeFile("README.md", fileBody , (err) =>
+        err ? console.log(err) : console.log("File written!")
+    )
+
+})
