@@ -1,0 +1,22 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "good readme generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmgson/Readme_Generator.git"
+  },
+  "author": "Chris Gutierrez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmgson/Readme_Generator/issues"
+  },
+  "homepage": "https://github.com/cmgson/Readme_Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
