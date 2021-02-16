@@ -58,23 +58,23 @@ inquirer.prompt([
     const licenseGet = data.license[0];
     renderLicenseBadge(licenseGet);
 
-    fileBody = `# app name: ${data.appName}\n
-    --- \n
-    ## description: ${data.description}\n
-    --- \n 
-    ## installation: ${data.installation}\n
-    --- \n
-    ## usage: ${data.usage}\n
-    --- \n
-    ## contributing: ${data.contributing}\n
-    --- \n
-    ## tests: ${data.tests}\n
-    --- \n
-    ## github: ${githubAddy}\n
-    --- \n
-    ## email: ${data.email}\n
-    --- \n
-    ## license: ${response}\n`
+fileBody = `${response}\n
+# app name: ${data.appName}\n
+--- \n
+## description: ${data.description}\n
+--- \n 
+## installation: ${data.installation}\n
+--- \n
+## usage: ${data.usage}\n
+--- \n
+## contributing: ${data.contributing}\n
+--- \n
+## tests: ${data.tests}\n
+--- \n
+## github: ${githubAddy}\n
+--- \n
+## email: ${data.email}\n
+--- \n`
     
     
     fs.writeFile("README.md", fileBody , (err) =>

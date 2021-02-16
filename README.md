@@ -1,33 +1,33 @@
-# app name: x
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]
 
-    --- 
+# app name: s
 
-    ## description: x
+--- 
 
-    --- 
+## description: s
+
+--- 
  
-    ## installation: x
+## installation: s
 
-    --- 
+--- 
 
-    ## usage: x
+## usage: s
 
-    --- 
+--- 
 
-    ## contributing: x
+## contributing: s
 
-    --- 
+--- 
 
-    ## tests: x
+## tests: s
 
-    --- 
+--- 
 
-    ## github: [link to github](https://github.com/x)
+## github: [link to github](https://github.com/s)
 
-    --- 
+--- 
 
-    ## email: x
+## email: s
 
-    --- 
-
-    ## license: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+--- 
