@@ -53,11 +53,28 @@ inquirer.prompt([
     },
 ]).then((responses) => {
     console.log(responses);
-    fileBody = `this should work ${responses}`;
+    const githubAddy = `[link to github](https://github.com/${responses.github})`
+    fileBody = `# app name: ${responses.appName}\n
+    --- \n
+    ## description: ${responses.description}\n
+    --- \n 
+    ## installation: ${responses.installation}\n
+    --- \n
+    ## usage: ${responses.usage}\n
+    --- \n
+    ## contributing: ${responses.contributing}\n
+    --- \n
+    ## tests: ${responses.tests}\n
+    --- \n
+    ## github: ${githubAddy}\n
+    --- \n
+    ## email: ${responses.email}\n
+    --- \n
+    ## license: ${responses.license}\n`
     
     
     fs.writeFile("README.md", fileBody , (err) =>
-        err ? console.log(err) : console.log("File written!")
+        err ? console.log(err) : console.log("Abra Cadabra, README.md generated!")
     )
 
 })
