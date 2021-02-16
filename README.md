@@ -30,4 +30,4 @@
 
     --- 
 
-    ## license: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+    ## license: ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
