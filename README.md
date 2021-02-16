@@ -1,2 +1,17 @@
-# Readme_Generator
-using command line and user input, creates a readme.md
+# app name: this
+ --- 
+ ## description: is
+ --- 
+ ## installation: so
+ --- 
+ ## usage: boring
+ --- 
+ ## contributing: and
+ --- 
+ ## tests: frustrating
+ --- 
+ ## github: i
+ --- 
+ ## email: hate
+ --- 
+ ## license: GNU
