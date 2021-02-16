@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const renderLicenseBadge = require('./generateMarkdown.js');
 const Choices = require('inquirer/lib/objects/choices');
 const { stringify } = require('querystring');
 
@@ -49,28 +50,31 @@ inquirer.prompt([
         type: 'checkbox',
         name: 'license',
         message: 'which licence would you like to attach?',
-        choices: ['GNU', 'Apache', 'Ms-PL', 'CDDL', 'EPL', 'MIT']
+        choices: ['GNU', 'Apache', 'PERL', 'IBM', 'EPL', 'MIT']
     },
-]).then((responses) => {
-    console.log(responses);
-    const githubAddy = `[link to github](https://github.com/${responses.github})`
-    fileBody = `# app name: ${responses.appName}\n
+]).then((data) => {
+    console.log(data);
+    const githubAddy = `[link to github](https://github.com/${data.github})`
+    const licenseGet = data.license[0];
+    renderLicenseBadge(licenseGet);
+
+    fileBody = `# app name: ${data.appName}\n
     --- \n
-    ## description: ${responses.description}\n
+    ## description: ${data.description}\n
     --- \n 
-    ## installation: ${responses.installation}\n
+    ## installation: ${data.installation}\n
     --- \n
-    ## usage: ${responses.usage}\n
+    ## usage: ${data.usage}\n
     --- \n
-    ## contributing: ${responses.contributing}\n
+    ## contributing: ${data.contributing}\n
     --- \n
-    ## tests: ${responses.tests}\n
+    ## tests: ${data.tests}\n
     --- \n
     ## github: ${githubAddy}\n
     --- \n
-    ## email: ${responses.email}\n
+    ## email: ${data.email}\n
     --- \n
-    ## license: ${responses.license}\n`
+    ## license: ${response}\n`
     
     
     fs.writeFile("README.md", fileBody , (err) =>
