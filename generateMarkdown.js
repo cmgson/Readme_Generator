@@ -23,12 +23,13 @@ function renderLicenseBadge(licenseGet) {
     default:
       response = '';
   }
-  return response;
+  // return response;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(licenseGet) {switch (licenseGet) {
+function renderLicenseLink(licenseGet) { 
+  switch (licenseGet) {
   case 'GNU':
     response = '(https://www.gnu.org/licenses/gpl-3.0)';
     break;
@@ -50,30 +51,31 @@ function renderLicenseLink(licenseGet) {switch (licenseGet) {
   default:
     response = '';
 }
-let linkToLicense = response;
-return linkToLicense;
+// let linkToLicense = response;
+// return linkToLicense;
 
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection() {
-  renderLicenseBadge();
-  renderLicenseLink();
-  let renderSection = `# ${response}${linkToLicense}\n`
+  // renderLicenseLink();
+  // renderLicenseBadge();
+  
+  let renderSection = `# ${renderLicenseBadge()}${renderLicenseLink()}\n`
   return renderSection;
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  renderLicenseSection();
-  // let githubAddy = `[link to github](https://github.com/${data.github})`
-    // let licenseGet = data.license[0];
+ function generateMarkdown(data) {
+  
+  let githubAddy = `[link to github](https://github.com/${data.github})`
+  let licenseGet = data.license[0];
 
   
 
   return `#
-  ${renderSection}\n
+  ${ renderLicenseSection()}\n
 # app name: ${data.appName}\n
 --- \n
 ## description: ${data.description}\n
