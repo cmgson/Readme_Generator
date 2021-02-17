@@ -1,7 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  switch (license) {
+function renderLicenseBadge(licenseGet) {
+  switch (licenseGet) {
     case 'GNU':
       response = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
       break;
@@ -28,17 +28,72 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(licenseGet) {switch (licenseGet) {
+  case 'GNU':
+    response = '(https://www.gnu.org/licenses/gpl-3.0)';
+    break;
+  case 'Apache' :
+    response = '(https://opensource.org/licenses/Apache-2.0)';
+    break;
+  case 'PERL' :
+    response = '(https://opensource.org/licenses/Artistic-2.0)'
+    break;
+  case 'IBM' :
+    response = '(https://opensource.org/licenses/IPL-1.0)';
+    break;
+  case 'EPL' :
+    response = '(https://opensource.org/licenses/EPL-1.0)';
+    break;
+  case 'MIT' :
+    response = '(https://opensource.org/licenses/MIT)';
+    break;
+  default:
+    response = '';
+}
+let linkToLicense = response;
+return linkToLicense;
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection() {
+  renderLicenseBadge();
+  renderLicenseLink();
+  let renderSection = `# ${response}${linkToLicense}\n`
+  return renderSection;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  renderLicenseSection();
+  // let githubAddy = `[link to github](https://github.com/${data.github})`
+    // let licenseGet = data.license[0];
+
+  
+
+  return `#
+  ${renderSection}\n
+# app name: ${data.appName}\n
+--- \n
+## description: ${data.description}\n
+--- \n 
+## installation: ${data.installation}\n
+--- \n
+## usage: ${data.usage}\n
+--- \n
+## contributing: ${data.contributing}\n
+--- \n
+## tests: ${data.tests}\n
+--- \n
+## github: ${githubAddy}\n
+--- \n
+## email: ${data.email}\n
+--- \n
+  
 
 `;
+
 }
 
-module.exports = renderLicenseBadge;
+module.exports = generateMarkdown;

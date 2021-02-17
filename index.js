@@ -3,6 +3,7 @@ const fs = require('fs');
 const renderLicenseBadge = require('./generateMarkdown.js');
 const Choices = require('inquirer/lib/objects/choices');
 const { stringify } = require('querystring');
+const generateMarkdown = require('./generateMarkdown.js');
 
 inquirer.prompt([
     {
@@ -56,25 +57,11 @@ inquirer.prompt([
     console.log(data);
     const githubAddy = `[link to github](https://github.com/${data.github})`
     const licenseGet = data.license[0];
-    renderLicenseBadge(licenseGet);
+    // const githubAddy = `[link to github](https://github.com/${data.github})`
+    // const licenseGet = data.license[0];
+    // renderLicenseBadge(licenseGet);
 
-fileBody = `${response}\n
-# app name: ${data.appName}\n
---- \n
-## description: ${data.description}\n
---- \n 
-## installation: ${data.installation}\n
---- \n
-## usage: ${data.usage}\n
---- \n
-## contributing: ${data.contributing}\n
---- \n
-## tests: ${data.tests}\n
---- \n
-## github: ${githubAddy}\n
---- \n
-## email: ${data.email}\n
---- \n`
+ let fileBody = generateMarkdown();
     
     
     fs.writeFile("README.md", fileBody , (err) =>
