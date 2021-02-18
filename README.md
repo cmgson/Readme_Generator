@@ -75,9 +75,11 @@ Now the front page looks way more readable and organized.
 ```
 --- 
 
-## <div align ='center'> <a name="screenshot"></a> **Screen Shots** </div>
+## <div align ='center'> <a name="screenshot"></a> **Examples and Walkthrough** </div>
 
 --- 
+### Walkthrough
+https://drive.google.com/file/d/1Asb0TiEfJlGoDf_J4pGZSZHiBA9Q6tMq/view
 ### Switches
 <img src="screenshots/renderlicensebadge.png" width="300" height="300"> <img src="screenshots/renderlicenselink.png" width="300" height="300">
 
