@@ -63,8 +63,8 @@ To use first pull up
 
 --- 
 
-![render licence](screenshots/renderlicensebadge.png =50x50) ![render link](screenshots/renderlicenselink.png =50x50) ![license section](screenshots/renderlicensesection.png =50x50) ![inquirer](screenshots/questions.png =50x50)
-![success](screenshots/success.png =50x50)
+![render licence](screenshots/renderlicensebadge.png) ![render link](screenshots/renderlicenselink.png) ![license section](screenshots/renderlicensesection.png) ![inquirer](screenshots/questions.png)
+![success](screenshots/success.png)
 
 
 --- 
