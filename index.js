@@ -53,7 +53,7 @@ inquirer.prompt([
         choices: ['GNU', 'Apache', 'PERL', 'IBM', 'EPL', 'MIT']
     },
 ]).then((data) => {
-    console.log(data.appName);
+    console.log(data);
     // const githubAddy = `[link to github](https://github.com/${data.github})`
     // const licenseGet = data.license[0];
     // const githubAddy = `[link to github](https://github.com/${data.github})`
