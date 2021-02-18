@@ -82,7 +82,7 @@ Now the front page looks way more readable and organized.
 <img src="screenshots/renderlicensebadge.png" width="300" height="300"> <img src="screenshots/renderlicenselink.png" width="300" height="300">
 
 ### Render License section and Questions
-<img src="screenshots/renderlicensesection.png" width="600" height="200"> <img scr="screenshots/questions.png" width="400" height="400">
+<img src="screenshots/renderlicensesection.png" width="600" height="200"> <img src="screenshots/questions.png" width="400" height="400">
 ### Abra Cadabra!
 <img src="screenshots/success.png" width="400" height="400">>
 
