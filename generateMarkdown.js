@@ -82,19 +82,19 @@ console.log(data.license[0]);
 
   return `
   ${renderLicenseSection(data)}\n
-# app name: ${data.appName}\n
+# ${data.appName}\n
 --- \n
-## description: ${data.description}\n
+## Description: ${data.description}\n
 --- \n 
-## installation: ${data.installation}\n
+## Installation: ${data.installation}\n
 --- \n
-## usage: ${data.usage}\n
+## Usage: ${data.usage}\n
 --- \n
-## contributing: ${data.contributing}\n
+## Contributing: ${data.contributing}\n
 --- \n
-## tests: ${data.tests}\n
+## Tests: ${data.tests}\n
 --- \n
-## github: ${githubAddy}\n
+## github: \n ${githubAddy}\n
 --- \n
 ## email: ${data.email}\n
 --- \n
