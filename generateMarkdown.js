@@ -3,58 +3,52 @@
 
 
 function renderLicenseBadge(data) {
-  console.log('renderLicenseBadge' + data.license[0])
-let licenseGet = data.license[0];
-
-  switch (licenseGet) {
-    case 'GNU':
+  switch (data.license[0]) {
+    case ['GNU'] :
       response = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
       break;
-    case 'Apache' :
+    case Apache :
       response = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]';
       break;
-    case 'PERL' :
+    case PERL :
       response = '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]'
       break;
-    case 'IBM' :
+    case IBM :
       response = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)]';
       break;
-    case 'EPL' :
+    case EPL :
       response = '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)]';
       break;
-    case 'MIT' :
+    case MIT :
       response = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
       break;
     default:
       response = '';
   }
-  
-  return response;
   console.log(response);
+  return response;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
- function renderLicenseLink(data) { 
-  console.log('renderLincenseLink' + data.license[0]);
-  let license = data.license[0];
-  switch (license) {
-  case 'GNU':
+function renderLicenseLink(data) { 
+  switch (data.license[0]) {
+  case GNU :
     response = '(https://www.gnu.org/licenses/gpl-3.0)';
     break;
-  case 'Apache' :
+  case Apache :
     response = '(https://opensource.org/licenses/Apache-2.0)';
     break;
-  case 'PERL' :
+  case PERL :
     response = '(https://opensource.org/licenses/Artistic-2.0)'
     break;
-  case 'IBM' :
+  case IBM :
     response = '(https://opensource.org/licenses/IPL-1.0)';
     break;
-  case 'EPL' :
+  case EPL :
     response = '(https://opensource.org/licenses/EPL-1.0)';
     break;
-  case 'MIT' :
+  case MIT :
     response = '(https://opensource.org/licenses/MIT)';
     break;
   default:
@@ -62,30 +56,31 @@ let licenseGet = data.license[0];
 }
 // let linkToLicense = response;
 // return linkToLicense;
-
-return response;
 console.log(response);
+return response;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection() {
+function renderLicenseSection(data) {
   // renderLicenseLink();
   // renderLicenseBadge();
   
-  let renderSection = `# ${renderLicenseBadge()}${renderLicenseLink()}\n`
+  let renderSection = `# ${renderLicenseBadge(data.license[0])}${renderLicenseLink(data.license[0])}\n`
+  console.log(renderSection);
   return renderSection;
 }
 
 // TODO: Create a function to generate markdown for README
  function generateMarkdown(data) {
+console.log(data.license[0]);
   let githubAddy = `[link to github](https://github.com/${data.github})`
-  let licenseGet = data.license[0];
+  
 
   
 
   return `#
-  ${renderLicenseSection()}\n
+  ${renderLicenseSection(data.license[0])}\n
 # app name: ${data.appName}\n
 --- \n
 ## description: ${data.description}\n
