@@ -46,7 +46,10 @@ This app uses _Inquirer_ in order to generate questions that will be used in ord
 
 --- 
 
-To use first pull up 
+1.  first open your terminal and input `node index.js`
+2.  The prompts will begin.
+3.  If you would like to skip one simply press enter.
+4.  This will create a readme that you can further edit but the basics should be fine as well!
 
 --- 
 
@@ -54,17 +57,34 @@ To use first pull up
 
 --- 
 ```
-<p>Suprisingly the issues I had were mainly due to the chaining of functions in order to use the export file.  I ran into some parameter issues, and then a particularly buggy connection involving the renderLicenseSection.  During the initial building the readme would be generated but for the badge and link, it was passing either an undefined, or an object.  As it turns out it was a combination of both.  I had to go back and make sure that I was passing the correct parameters to keep them from being returned as undefined.  Second, I had to make sure that I was accessing the switch statement correctly.  I was using the wrong object notation when trying to access the data return from the inquirer prompts.  In order to accessthe checkbox answer from the user I had to make sure to use array notation to get the first and only item in the array that was returned.  `data.license[0]` ended up being the ticket to access that return.</p>
-<p>The only other issue I ran into was the use of an imported file.  With a little instruction from class I was able to figure it out relatively easily.  Now the front page looks way more readable and organized.</p>
+Suprisingly the issues I had were mainly due to the chaining of functions in order to use the export file.
+I ran into some parameter issues, and then a particularly buggy connection involving the renderLicenseSection.
+During the initial building the readme would be generated but for the badge and link,
+it was passing either an undefined, or an object.
+As it turns out it was a combination of both.
+I had to go back and make sure that I was passing the correct parameters to keep them from being returned as undefined.
+Second, I had to make sure that I was accessing the switch statement correctly.
+I was using the wrong object notation when trying to access the data return from the inquirer prompts.
+In order to accessthe checkbox answer from the user I had to make sure to use
+array notation to get the first and only item in the array that was returned.
+ `data.license[0]` ended up being the ticket to access that return.
+The only other issue I ran into was the use of an imported file.
+With a little instruction from class I was able to figure it out relatively easily.
+Now the front page looks way more readable and organized.
+   
 ```
 --- 
 
 ## <div align ='center'> <a name="screenshot"></a> **Screen Shots** </div>
 
 --- 
+### Switches
+<img src="screenshots/renderlicensebadge.png" width="300" height="300"> <img src="screenshots/renderlicenselink.png" width="300" height="300">
 
-![render licence](screenshots/renderlicensebadge.png) ![render link](screenshots/renderlicenselink.png) ![license section](screenshots/renderlicensesection.png) ![inquirer](screenshots/questions.png)
-![success](screenshots/success.png)
+### Render License section and Questions
+<img src="screenshots/renderlicensesection.png" width="600" height="200"> <img scr="screenshots/questions.png" width="400" height="400">
+### Abra Cadabra!
+<img src="screenshots/success.png" width="400" height="400">>
 
 
 --- 
