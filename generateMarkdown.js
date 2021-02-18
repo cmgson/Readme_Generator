@@ -1,6 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-
 
 function renderLicenseBadge(data) {
   console.log(data)
@@ -30,8 +27,7 @@ function renderLicenseBadge(data) {
   return response;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+
 function renderLicenseLink(data) { 
   switch (data.license[0]) {
   case 'GNU' :
@@ -55,52 +51,62 @@ function renderLicenseLink(data) {
   default:
     response = '';
 }
-// let linkToLicense = response;
-// return linkToLicense;
-console.log(response);
-return response;
+
+  return response;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(data) {
-  // renderLicenseLink();
-  // renderLicenseBadge();
   
   let renderSection = ` ${renderLicenseBadge(data)}${renderLicenseLink(data)}\n`
   console.log(renderSection);
   return renderSection;
 }
 
-// TODO: Create a function to generate markdown for README
  function generateMarkdown(data) {
-console.log(data.license[0]);
-  let githubAddy = `[link to github](https://github.com/${data.github})`
+  let githubAddy = `[${data.github}](https://github.com/${data.github})`
   
-
-  
-
   return `
   ${renderLicenseSection(data)}\n
-# ${data.appName}\n
+# <div align='center'> **${data.appName}** </div>\n
 --- \n
-## Description: ${data.description}\n
---- \n 
-## Installation: ${data.installation}\n
 --- \n
-## Usage: ${data.usage}\n
+## **Table Of Contents** \n
+---\n
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [Tests](#tests)
+6. [Review and Contribute](#github)
 --- \n
-## Contributing: ${data.contributing}\n
---- \n
-## Tests: ${data.tests}\n
---- \n
-## github: \n ${githubAddy}\n
---- \n
-## email: ${data.email}\n
---- \n
-  
 
-`;
+## <div align ='center'> <a name="description:></a> **Description** </div> \n
+--- \n
+${data.description}\n
+--- \n 
+## <div align ='center'> <a name="installation"></a> **Installation** </div>
+--- \n 
+${data.installation}\n
+--- \n
+## <div align ='center'> <a name="usage"></a> **Usage** </div>\n
+--- \n
+${data.usage}\n
+--- \n
+## <div align ='center'> <a name="contributing"></a> **Contributing** </div>\n
+--- \n
+${data.contributing}\n
+--- \n
+## <div align ='center'> <a name="tests"></a> **Tests** </div>\n
+--- \n
+${data.tests}\n
+--- \n
+## <div align ='center'> <a name="github"></a> **Github and Email** </div>\n
+--- \n
+##<div align ='center'>**Review and contribute here**</div>\n
+### _Github:_ ${githubAddy}\n
+\n
+### _Email:_ ${data.email}\n
+--- \n`;
 
 }
 
