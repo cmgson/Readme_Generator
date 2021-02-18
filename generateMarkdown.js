@@ -3,23 +3,24 @@
 
 
 function renderLicenseBadge(data) {
+  console.log(data)
   switch (data.license[0]) {
-    case ['GNU'] :
+    case 'GNU' :
       response = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
       break;
-    case Apache :
+    case 'Apache' :
       response = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]';
       break;
-    case PERL :
+    case 'PERL' :
       response = '[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]'
       break;
-    case IBM :
+    case 'IBM' :
       response = '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)]';
       break;
-    case EPL :
+    case 'EPL' :
       response = '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)]';
       break;
-    case MIT :
+    case 'MIT' :
       response = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
       break;
     default:
@@ -33,22 +34,22 @@ function renderLicenseBadge(data) {
 // If there is no license, return an empty string
 function renderLicenseLink(data) { 
   switch (data.license[0]) {
-  case GNU :
+  case 'GNU' :
     response = '(https://www.gnu.org/licenses/gpl-3.0)';
     break;
-  case Apache :
+  case 'Apache' :
     response = '(https://opensource.org/licenses/Apache-2.0)';
     break;
-  case PERL :
+  case 'PERL' :
     response = '(https://opensource.org/licenses/Artistic-2.0)'
     break;
-  case IBM :
+  case 'IBM' :
     response = '(https://opensource.org/licenses/IPL-1.0)';
     break;
-  case EPL :
+  case 'EPL' :
     response = '(https://opensource.org/licenses/EPL-1.0)';
     break;
-  case MIT :
+  case 'MIT' :
     response = '(https://opensource.org/licenses/MIT)';
     break;
   default:
@@ -66,7 +67,7 @@ function renderLicenseSection(data) {
   // renderLicenseLink();
   // renderLicenseBadge();
   
-  let renderSection = `# ${renderLicenseBadge(data.license[0])}${renderLicenseLink(data.license[0])}\n`
+  let renderSection = ` ${renderLicenseBadge(data)}${renderLicenseLink(data)}\n`
   console.log(renderSection);
   return renderSection;
 }
@@ -79,8 +80,8 @@ console.log(data.license[0]);
 
   
 
-  return `#
-  ${renderLicenseSection(data.license[0])}\n
+  return `
+  ${renderLicenseSection(data)}\n
 # app name: ${data.appName}\n
 --- \n
 ## description: ${data.description}\n
