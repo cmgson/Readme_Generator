@@ -56,7 +56,6 @@ function renderLicenseLink(data) {
 function renderLicenseSection(data) {
   
   let renderSection = ` ${renderLicenseBadge(data)}${renderLicenseLink(data)}\n`
-  console.log(renderSection);
   return renderSection;
 }
 
