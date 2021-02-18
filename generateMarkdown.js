@@ -1,6 +1,5 @@
 
 function renderLicenseBadge(data) {
-  console.log(data)
   switch (data.license[0]) {
     case 'GNU' :
       response = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
@@ -23,7 +22,6 @@ function renderLicenseBadge(data) {
     default:
       response = '';
   }
-  console.log(response);
   return response;
 }
 
@@ -80,7 +78,7 @@ function renderLicenseSection(data) {
 6. [Review and Contribute](#github)
 --- \n
 
-## <div align ='center'> <a name="description:></a> **Description** </div> \n
+## <div align ='center'> <a name="description"></a> **Description** </div> \n
 --- \n
 ${data.description}\n
 --- \n 
@@ -102,7 +100,7 @@ ${data.tests}\n
 --- \n
 ## <div align ='center'> <a name="github"></a> **Github and Email** </div>\n
 --- \n
-##<div align ='center'>**Review and contribute here**</div>\n
+## <div align ='center'> **Review and contribute here**</div>\n
 ### _Github:_ ${githubAddy}\n
 \n
 ### _Email:_ ${data.email}\n
